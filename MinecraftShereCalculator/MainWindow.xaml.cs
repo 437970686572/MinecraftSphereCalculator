@@ -1,29 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MinecraftShereCalculator
 {
     public partial class MainWindow : Window
     {
-        private int Radius;
-        private int With;
-        private int Hight;
-        private int BlockWith;
-        private int CenterX;
-        private int CenterY;
-        private int CenterZ;
+        private float Radius;
+        private float With;
+        private float Hight;
+        private float BlockWith;
+        private float CenterX;
+        private float CenterY;
+        private float CenterZ;
         List<List<int>> Wall;
 
         public MainWindow()
@@ -31,12 +23,12 @@ namespace MinecraftShereCalculator
             InitializeComponent();
         }
 
-        private bool IsInSphere(int x, int y, int z)
+        private bool IsInSphere(float x, float y, float z)
         {
             return GetRadiusToCenter(x, y, z) < Radius;
         }
 
-        private Double GetRadiusToCenter(int x, int y, int z)
+        private Double GetRadiusToCenter(float x, float y, float z)
         {
             return Math.Sqrt(((CenterX - x) * (CenterX - x)) + ((CenterY - y) * (CenterY - y)) + ((CenterZ - z) * (CenterZ - z)));
         }
@@ -57,12 +49,12 @@ namespace MinecraftShereCalculator
 
         private void Calculate()
         {
-            if (string.IsNullOrEmpty(txtRadius.Text))
+            if (string.IsNullOrEmpty(txtRadius.Text) || float.TryParse(txtRadius.Text.Replace(".", ","), out Radius) is false)
             {
+                MessageBox.Show("Der Radius muss eine Zahl sein.");
                 return;
             }
 
-            Radius = int.Parse(txtRadius.Text);
             With = Radius * 2 + 2;
             CenterX = Radius + 1;
             CenterY = Radius + 1;
@@ -96,9 +88,9 @@ namespace MinecraftShereCalculator
             lblBlockCount.Content = BlockCount.ToString();
         }
 
-        private bool IsEdgeOfCphere(int x, int y)
+        private bool IsEdgeOfCphere(float x, float y)
         {
-            return Wall[x + 1][y] == 0 || Wall[x - 1][y] == 0 || Wall[x][y + 1] == 0 || Wall[x][y - 1] == 0;
+            return Wall[(int)x + 1][(int)y] == 0 || Wall[(int)x - 1][(int)y] == 0 || Wall[(int)x][(int)y + 1] == 0 || Wall[(int)x][(int)y - 1] == 0;
         }
 
         private void DrawSphere()
@@ -138,14 +130,6 @@ namespace MinecraftShereCalculator
             }
         }
 
-        private void TxtRadius_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (int.TryParse(txtRadius.Text, out Radius) == false && txtRadius.Text.Length > 0)
-            {
-                txtRadius.Text = txtRadius.Text[..^1];
-            }
-        }
-
         private void sliHight_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (txtHight != null)
@@ -156,7 +140,7 @@ namespace MinecraftShereCalculator
 
         private void txtHight_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (int.TryParse(txtHight.Text, out Hight))
+            if (float.TryParse(txtHight.Text, out Hight))
             {
                 if (Hight > sliHight.Minimum && Hight < sliHight.Maximum)
                 {

@@ -36,7 +36,7 @@
             </Grid.RowDefinitions>
 
             <Label Content="Radius:" VerticalContentAlignment="Center"/>
-            <TextBox x:Name="txtRadius" Grid.Column="1" VerticalContentAlignment="Center" TextChanged="TxtRadius_TextChanged"/>
+            <TextBox x:Name="txtRadius" Grid.Column="1" VerticalContentAlignment="Center"/>
 
             <Button x:Name="btnGo" Grid.Column="1" Grid.Row="2" Content="Go" Click="BtnGo_Click"/>
 

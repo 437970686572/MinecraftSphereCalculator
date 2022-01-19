@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Felix\\source\\repos\\MinecraftShereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj": {}
+    "C:\\Users\\Felix\\Documents\\GitHub\\MinecraftSphereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Felix\\source\\repos\\MinecraftShereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj": {
+    "C:\\Users\\Felix\\Documents\\GitHub\\MinecraftSphereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felix\\source\\repos\\MinecraftShereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\Felix\\Documents\\GitHub\\MinecraftSphereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj",
         "projectName": "MinecraftShereCalculator",
-        "projectPath": "C:\\Users\\Felix\\source\\repos\\MinecraftShereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj",
+        "projectPath": "C:\\Users\\Felix\\Documents\\GitHub\\MinecraftSphereCalculator\\MinecraftShereCalculator\\MinecraftShereCalculator.csproj",
         "packagesPath": "C:\\Users\\Felix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felix\\source\\repos\\MinecraftShereCalculator\\MinecraftShereCalculator\\obj\\",
+        "outputPath": "C:\\Users\\Felix\\Documents\\GitHub\\MinecraftSphereCalculator\\MinecraftShereCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
